@@ -24,4 +24,11 @@ describe 'Calculate' do
       expect(calc.calculate('5 + 5')).to eql(10)
     end
   end
+
+  context "given '5 - 4'" do
+    it "returns '1'" do
+      calc = Calc.new
+      expect(calc.calculate('5 - 4')).to eql(1)
+    end
+  end
 end
