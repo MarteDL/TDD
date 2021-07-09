@@ -45,4 +45,11 @@ describe 'Calculate' do
       expect(calc.calculate('20 / 4')).to eql(5)
     end
   end
+
+  context "given '5+5'" do
+    it "returns '10'" do
+      calc = Calc.new
+      expect(calc.calculate('5+5')).to eql(10)
+    end
+  end
 end
