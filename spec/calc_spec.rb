@@ -48,5 +48,17 @@ describe 'Calc' do
         expect(calc.calculate('5+5')).to eql(10)
       end
     end
+
+    context 'given a string with text' do
+      it 'raises an error' do
+        expect { calc.calculate('hello there') }.to raise_error(TypeError)
+      end
+    end
+
+    context 'given an empty string' do
+      it 'raises an error' do
+        expect { calc.calculate('') }.to raise_error(TypeError)
+      end
+    end
   end
 end
