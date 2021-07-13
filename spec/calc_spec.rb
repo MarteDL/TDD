@@ -84,5 +84,17 @@ describe 'Calc' do
         expect(calc.calculate('100/3')).to eql('33.33')
       end
     end
+
+    context "given '5+5+5'" do
+      it "should return '15''" do
+        expect(calc.calculate('5+5+5')).to eql('15')
+      end
+    end
+
+    context "given '5+5-3'" do
+      it "should return '7''" do
+        expect(calc.calculate('5+5-3')).to eql('7')
+      end
+    end
   end
 end
