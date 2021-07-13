@@ -60,5 +60,17 @@ describe 'Calc' do
         expect { calc.calculate('') }.to raise_error(TypeError)
       end
     end
+
+    context 'given random characters' do
+      it 'raises an error' do
+        expect { calc.calculate('&*$%') }.to raise_error(TypeError)
+      end
+    end
+
+    context 'given faulty input' do
+      it 'raises an error' do
+        expect { calc.calculate('234%*235') }.to raise_error(TypeError)
+      end
+    end
   end
 end
