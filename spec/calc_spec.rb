@@ -96,5 +96,23 @@ describe 'Calc' do
         expect(calc.calculate('5+5-3')).to eql('7')
       end
     end
+
+    context "given '5+5-3-1'" do
+      it "should return '6''" do
+        expect(calc.calculate('5+5-3-1')).to eql('6')
+      end
+    end
+
+    context "given '5.3+6-4+9.2-7.3+18.2+1'" do
+      it "should return '28.4''" do
+        expect(calc.calculate('5.3+6-4+9.2-7.3+18.2+1')).to eql('28.4')
+      end
+    end
+
+    context "given '14-4.2+7+9-12-1.3+0.5'" do
+      it "should return '13''" do
+        expect(calc.calculate('14-4.2+7+9-12-1.3+0.5')).to eql('13')
+      end
+    end
   end
 end
