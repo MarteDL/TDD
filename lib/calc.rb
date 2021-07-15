@@ -1,3 +1,5 @@
+require_relative 'invalid_argument_error'
+
 class Calc
   MATH_SYMBOLS = %w[+ - * /].freeze
 
@@ -9,7 +11,7 @@ class Calc
 
   def calculate(string)
     clean_string = string.split(' ').join
-    raise TypeError unless valid?(clean_string)
+    raise InvalidArgumentError unless valid?(clean_string)
 
     match_data_object = clean_string.match(REGEXES[:first_operation])
     first_operation = match_data_object[:first_operation]

@@ -32,10 +32,10 @@ describe 'Calc' do
     describe '#calculate input validation' do
       where(:string, :error) do
         [
-          ['hello there', TypeError],
-          ['', TypeError],
-          ['&*$%', TypeError],
-          ['234%*235', TypeError]
+          ['hello there', InvalidArgumentError],
+          ['', InvalidArgumentError],
+          ['&*$%', InvalidArgumentError],
+          ['234%*235', InvalidArgumentError]
         ]
       end
 
