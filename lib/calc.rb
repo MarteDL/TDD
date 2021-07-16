@@ -4,9 +4,9 @@ class Calc
   MATH_SYMBOLS = %w[+ - * /].freeze
 
   REGEXES = {
-    validation: %r{^(\d+(\.\d+)?[\+\-\*\/]{1}\d+(\.\d+)?)([\+\-\*\/]{1}\d+(\.\d+)?)*$},
-    first_operation: %r{^(?'first_operation'\d+(\.\d+)?[\+\-\*\/]{1}\d+(\.\d+)?)},
-    symbol_and_number: %r{[\+\-\*\/]{1}\d+(?>\.\d+)?}
+    validation: %r{^(\d+(\.\d+)?[-/+*]\d+(\.\d+)?)([-/+*]\d+(\.\d+)?)*$},
+    first_operation: %r{^(?'first_operation'\d+(?>\.\d+)?[-/+*]\d+(?>\.\d+)?)},
+    symbol_and_number: %r{[-/+*]\d+(?>\.\d+)?}
   }.freeze
 
   def calculate(string)
@@ -27,7 +27,7 @@ class Calc
   def valid?(string)
     return false if string.empty?
 
-    string.match(REGEXES[:validation])
+    string.match?(REGEXES[:validation])
   end
 
   def format_to_string(result)

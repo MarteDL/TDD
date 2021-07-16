@@ -35,12 +35,13 @@ describe 'Calc' do
           ['hello there', InvalidArgumentError],
           ['', InvalidArgumentError],
           ['&*$%', InvalidArgumentError],
-          ['234%*235', InvalidArgumentError]
+          ['234%*235', InvalidArgumentError],
+          ['234+-45,5*4/-6', InvalidArgumentError]
         ]
       end
 
       with_them do
-        it 'raises a TypeError' do
+        it 'raises an InvalidArgumentError' do
           expect { calc.calculate(string) }.to raise_error(error)
         end
       end
